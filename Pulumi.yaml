@@ -1,0 +1,7 @@
+name: azure-event-hub
+runtime: nodejs
+description: A minimal TypeScript Pulumi program
+
+config:
+  project:url:
+      value: https://github.com:serignemodou/azure-zero-trust-network

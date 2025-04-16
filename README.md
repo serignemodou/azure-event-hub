@@ -17,7 +17,7 @@
 
 1. Create event hub
 - Create event hub namespace
-- Create event hub namespace AuthorizationRule
+- Create event hub namespace AuthorizationRule with [Listen, send, manage] permissions
 - Create envHub
 - export eventHub name, eventHub connection string
 
@@ -27,13 +27,15 @@
 - Create storage account SaS Token
 - Export storage account name, container name, sasTpken
 
-3. Create filebeat
+3. Kafka
+- Déploy kafka sur un container
+
+4. Create filebeat
 - Create a custom Dockerfile for filebeat
 - Create filebeat.yml config (input evenHub and storageAccount, output kafka)
 - Build, push and deploy containers in webApp container, containerApp or AKS
+- Place containerApp, WebApp or AKS in the subnet that connected to ServiceEnpoint
 
-4. Kafka
-- Déploy kafka sur un container
 
 5. Create Keyvault as producer
 - Create keyvault

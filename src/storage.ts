@@ -50,3 +50,18 @@ new storage.BlobServiceProperties('blobService', {
     },
     isVersioningEnabled: true
 })
+
+const saContainerName = `sa-cn-${projectName}-${env}`
+export const blobContainer = new storage.BlobContainer(saContainerName, {
+    resourceGroupName: resourcesGroup.name,
+    accountName: storageAccount.name,
+    containerName: saContainerName,
+    publicAccess: 'None'
+})
+
+const storageAccountKeys = storage.listStorageAccountKeysOutput({
+    resourceGroupName: resourcesGroup.name,
+    accountName: storageAccount.name
+})
+
+export const primaryStorageKey = storageAccountKeys.keys[0].value
